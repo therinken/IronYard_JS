@@ -9,9 +9,11 @@ var RobertosBankAccount = {
     savings: 0,
     retirement: 0
 };
-
 addToBank(MattsBankAccount, 100, 10, 1);
 addToBank(RobertosBankAccount, 200, 50, 19);
+
+var sumOfMatts = getSumOfAccounts(MattsBankAccount);
+var sumOfRobertos = getSumOfAccounts(RobertosBankAccount);
 
 function addToBank(account, savings, retirement, checking) {
     "use strict";
@@ -20,17 +22,12 @@ function addToBank(account, savings, retirement, checking) {
     account.checking = account.checking + checking;
 }
 
-var sumOfMatts = getSumOfAccounts(MattsBankAccount);
-var sumOfRobertos = getSumOfAccounts(RobertosBankAccount);
-
 function getSumOfAccounts(account) {
     "use strict";
-    // return ... ?? var difference = function (a, b) { return Math.abs(a - b) }
-
-    if sumOfMatts > sumOfRobertos
-    return sumOfMatts - sumOfRobertos
-    else
-        return sumOfRobertos - sumOfMatts
+    
+    return(account.savings + account.retirement + account.checking)
 }
 
-console.log();
+
+
+console.log(sumOfMatts - sumOfRobertos);
